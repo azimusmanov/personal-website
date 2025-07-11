@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
 body {
     font-family: "Consola", monospace;
     width: 100%;
@@ -26,16 +36,28 @@ body {
     font-size: 17px;
   }
 
-  #experience > ul{
-    list-style: none;
-  }
+  #experience ul {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0;
+    margin: 0;
+}
 
-  #experience > ul > li{
+#experience li {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-  }
+    gap: 20px;
+    margin-bottom: 20px;
+}
+  /* For safari formatting */
+  .experience-logo-rectangle, .experience-logo-square {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
 
   .experience-logo-rectangle{
     height: 50px;
