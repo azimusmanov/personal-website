@@ -26,6 +26,29 @@ body {
     font-size: 17px;
   }
 
+  #experience > ul{
+    list-style: none;
+  }
+
+  #experience > ul > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .experience-logo-rectangle{
+    height: 50px;
+    width: 170px;
+    margin-right: 50px;
+  }
+
+  .experience-logo-square{
+    height: 68px;
+    width: 68px;
+    margin-right: 50px;
+  }
+
   #projects > ul{
     list-style: none;
   }
