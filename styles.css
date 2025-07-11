@@ -8,7 +8,12 @@ body {
     background: linear-gradient(to right, #6185ff, #ff616f);
     background-attachment: fixed;
   }
-  
+
+  #Azim{
+    border-radius: 50%;
+    border: 5px solid black;
+  }
+
   main {
     width: 70%;
     margin: auto;
