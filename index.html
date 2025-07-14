@@ -36,14 +36,22 @@
         <a href="mailto:azimusmanov2027@u.northwestern.edu">Email</a>
         <br>
         <a href="tel:8457451867">Phone</a>
-    </p>
+    </p> 
   </div>
 
   <div id = "test-JS">
-    <button>Click Me!</button>
-    <script src="script.js"></script>
+    <h3>Change the background color!</h3>
+    <button class="color-button" id="blueRed" onclick="setColorGradient('#6185ff', '#ff616f')">Blue-Red</button>
+    <button class="color-button" id="purpleGreen" onclick="setColorGradient('#34eb3d', '#5f3dad')">Green-Purple</button>
+    <button class="color-button" id="red" onclick="setColorSolid('red')">Red</button>
+    <button class="color-button" id="green" onclick="setColorSolid('green')">Green</button>
+    <button class="color-button" id="blue" onclick="setColorSolid('blue')">Blue</button>
+    <button class="color-button" id="grey" onclick="setColorSolid('grey')">Grey</button>
+
+    <button class="color-button" id="random" onclick="randomColor()">Random Color</button>
+    <button class="color-button" id="random" onclick="randomGradient()">Random Gradient</button>
   </div>
-  
+
   <div id="about-me">
     <h2>About Me</h2>
     <p>
@@ -59,7 +67,6 @@
        that I hope to learn. -->
        <br> Outside of Computer Engineering, I also enjoy playing basketball, 
        producing music, playing guitar, and sailing.
-       <br><br><br><br>
     </p>
   </div>
 
@@ -103,5 +110,7 @@
         <li>The Pancake</li>
     </ul>
   </div>
+
+  <script src="scripts.js"></script>
   </body>
 </html>

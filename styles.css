@@ -15,8 +15,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: linear-gradient(to right, #6185ff, #ff616f);
-    background-attachment: fixed;
+    /* background: linear-gradient(to right, #6185ff, #ff616f); */
+    /* background-attachment: fixed; */
   }
 
   #Azim{
@@ -30,6 +30,10 @@ body {
     position: relative;
     border-radius: 5px;
     margin-top: 50px;
+  }
+
+  div {
+    margin-bottom: 40px;
   }
 
   div#about-me{
@@ -81,4 +85,35 @@ body {
   
   footer > p {
     padding: 37px;
+  }
+
+  #blueRed{
+    background: linear-gradient(to right, #6185ff, #ff616f);
+  }
+
+  #purpleGreen {
+    background: linear-gradient(to left, #34eb3d, #5f3dad);
+  }
+
+  #blue{
+    background: rgb(10,10,200);
+  }
+
+  #green {
+    background: rgb(25, 230, 85);
+  }
+
+  #red {
+    background: rgb(250, 60, 30);
+  }
+
+  .color-button{
+    border-radius: 5px;
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid black;
   }
