@@ -4,17 +4,54 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+} */
+
+#navbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  background: null;
+  gap: 10px;
+  left: 0;
+}
+
+section {
+  transition: all 0.3s ease-in-out;
+}
+
 ul, ol {
     list-style: none;
 }
 
 body {
+    padding-top: 80px;
     font-family: "Consola", monospace;
     width: 100%;
     min-height: 100vh;
     margin: 0;
     padding: 0;
     text-align: center;
+    margin-left: 220px;
     /* background: linear-gradient(to right, #6185ff, #ff616f); */
     /* background-attachment: fixed; */
   }
