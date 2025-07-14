@@ -33,7 +33,29 @@ html {
   background: null;
   gap: 10px;
   left: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  background: rgba(255, 255, 255, 0.2);
 }
+
+/* scroll-snapping container*/
+.snap-container{
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* making each section fill the screen */
+.snap-section{
+  scroll-snap-align: start;
+  height: 100vh;
+  padding-top: 100px; /* to offset nav bar, which is fixed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+
 
 section {
   transition: all 0.3s ease-in-out;
