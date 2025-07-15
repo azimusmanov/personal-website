@@ -2,58 +2,66 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* nav {
+.header{
   position: fixed;
+  align-items: center;
   top: 0;
   left: 0;
-  width: 200px;
-  height: 100vh;
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.logo {
   color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 10px;
-} */
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+}
 
-#navbar{
+.navbar{
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-top: 20px;
-  position: fixed;
-  top: 0;
-  width: 50px;
-  height: 100%;
-  background: null;
-  gap: 10px;
-  left: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  gap: 40px;
+  position: relative;
+  z-index: 999;
+}
+
+.navbar a.glass-small {
+  color: white !important;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 10px;
+  border-bottom: 2px solid transparent;
+  padding: 3px 5px;
+  border-radius: 15px;
+  transition: 0.3s;
+  position: relative;
+  z-index: 999;
+    /* Glass Effect */
+  background: rgba(189, 189, 189, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+  border: 1px solid rgba(189, 189, 189, 0.22);
+}
+
+.navbar a:hover{
+  border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.2);
-  transition: width 200ms
 }
 
-#navbar a {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms, visibility 0s linear 200ms;
-}
-
-#navbar:hover{
-  width: 150px;
-  visibility: visible;
-}
-
-#navbar:hover a{
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0.2s;
-  transition: opacity 0.3s ease, linear 0s;
+#title-wrapper {
+  margin-top: 40px;
 }
 
 
@@ -75,7 +83,9 @@ html {
   font-size: 1rem;
 }
 
-
+#social-links-and-contact{
+  margin-top: 100px;
+}
 
 section {
   transition: all 0.3s ease-in-out;
@@ -196,3 +206,40 @@ body {
     cursor: pointer;
     border: 2px solid black;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#train-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: null;
+  padding: 40px 0;
+}
+/* 
+.pixel-sign {
+  background: #000;
+  border: 6px solid #666;
+  border-radius: 10px;
+  padding: 30px 40px;
+  font-family: 'Press Start 2P', monospace;
+  color: #FFCC00;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  box-shadow: inset 0 0 20px #000;
+}
+
+.train-letter {
+  font-size: 28px;
+  background: #111;
+  padding: 16px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.7);
+}
+
+.train-destination {
+  font-size: 14px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+} */
