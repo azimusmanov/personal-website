@@ -40,7 +40,8 @@ html {
 
 #navbar a {
   opacity: 0;
-  transition: opacity 200ms
+  visibility: hidden;
+  transition: opacity 200ms, visibility 0s linear 200ms;
 }
 
 #navbar:hover{
@@ -50,6 +51,9 @@ html {
 
 #navbar:hover a{
   opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+  transition: opacity 0.3s ease, linear 0s;
 }
 
 
