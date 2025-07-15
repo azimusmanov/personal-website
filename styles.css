@@ -206,8 +206,8 @@ body {
     margin-right: 50px;
   }
 
-  #projects > ul{
-    list-style: none;
+  #projects {
+    align-content: flex-start;
   }
 
   footer {
