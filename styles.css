@@ -28,7 +28,7 @@ html {
   padding-top: 20px;
   position: fixed;
   top: 0;
-  width: 150px;
+  width: 50px;
   height: 100%;
   background: null;
   gap: 10px;
@@ -36,6 +36,20 @@ html {
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   background: rgba(255, 255, 255, 0.2);
 }
+
+#navbar a {
+  visibility: hidden;
+}
+
+#navbar:hover{
+  width: 150px;
+  visibility: visible;
+}
+
+#navbar:hover a{
+  visibility: visible;
+}
+
 
 /* scroll-snapping container*/
 .snap-container{
