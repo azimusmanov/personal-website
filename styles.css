@@ -39,6 +39,19 @@ html {
   z-index: 1000;
 }
 
+#contact-footer{
+  height: 40vh;
+  background: #5f3dad;
+  background-color: #5f3dad;
+  color: white;
+  z-index: 9999;
+}
+
+footer{
+  scroll-snap-type: none;
+  scroll-snap-align: none;
+}
+
 .logo {
   color: white;
   font-size: 30px;
@@ -98,7 +111,7 @@ div.glass-div{
 }
 
 div#title-wrapper {
-  margin-top: 200px;
+  margin-top: 80px;
 }
 
 /* making each section fill the screen */
