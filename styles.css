@@ -68,7 +68,7 @@ div.glass-div{
   text-decoration: none;
   margin: 0 10px;
   border-bottom: 2px solid transparent;
-  padding: 3px 5px;
+  padding: 6px 10px;
   border-radius: 15px;
   transition: 0.3s;
   position: relative;
@@ -81,16 +81,16 @@ div.glass-div{
   border: 1px solid rgba(189, 189, 189, 0.22);
 }
 
-#title-wrapper {
-  margin-top: 40px;
+div#title-wrapper {
+  margin-top: 200px;
 }
 
 
 /* scroll-snapping container*/
 .snap-container{
   scroll-snap-type: y proximity;
-  overflow-y: scroll;
-  height: 100vh;
+  /* overflow-y: scroll;
+  height: 100vh; */
 }
 
 /* making each section fill the screen */
