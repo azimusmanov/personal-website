@@ -20,6 +20,7 @@ html {
   display: flex;
   justify-content: center;
   z-index: 10;
+  z-index: 1000;
 }
 
 .logo {
@@ -71,7 +72,7 @@ div.glass-div{
   border-radius: 15px;
   transition: 0.3s;
   position: relative;
-  z-index: 999;
+  z-index: 80;
     /* Glass Effect */
   background: rgba(189, 189, 189, 0.14);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
