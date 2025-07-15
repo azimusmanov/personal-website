@@ -5,9 +5,21 @@
     font-family: "Poppins", sans-serif;
 }
 
+#bg-video{
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}
+
 html {
   scroll-behavior: smooth;
-  background: black;
+  /* background: black; */
 }
 
 .header{
@@ -125,6 +137,7 @@ body {
     padding: 0;
     text-align: center;
     margin-left: 50px;
+    background: transparent;
     /* background: linear-gradient(to right, #6185ff, #ff616f); */
     /* background-attachment: fixed; */
   }
