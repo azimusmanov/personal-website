@@ -45,4 +45,3 @@ function randomGradient(){
     setColorGradient(color1, color2);
 }
 
-setColorGradient(' #6185ff', '#ff616f'); 
