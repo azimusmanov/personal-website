@@ -22,6 +22,7 @@ body:not(:has(#frontpage:in-viewport)) #bg-video {
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   /* background: black; */
 }
 
@@ -100,19 +101,12 @@ div#title-wrapper {
   margin-top: 200px;
 }
 
-
-/* scroll-snapping container*/
-.snap-container{
-  scroll-snap-type: y mandatory;
-  /* overflow-y: scroll;
-  height: 100vh; */
-}
-
 /* making each section fill the screen */
-.snap-section{
+.snap-section {
   scroll-snap-align: start;
+  scroll-margin-top: 30px;
   height: 100vh;
-  padding-top: 100px; /* to offset nav bar, which is fixed */
+  scroll-snap-stop: always;
   display: flex;
   justify-content: center;
   align-items: center;
