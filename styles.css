@@ -35,10 +35,12 @@ html {
   left: 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   background: rgba(255, 255, 255, 0.2);
+  transition: width 200ms
 }
 
 #navbar a {
-  visibility: hidden;
+  opacity: 0;
+  transition: opacity 200ms
 }
 
 #navbar:hover{
@@ -47,7 +49,7 @@ html {
 }
 
 #navbar:hover a{
-  visibility: visible;
+  opacity: 1;
 }
 
 
