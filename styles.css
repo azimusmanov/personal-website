@@ -157,10 +157,6 @@ div.project-glass-div{
   transition: 0.3s;
   position: relative;
   z-index: 80;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-bottom: 5vh;
-  padding-top: 5vh;
     /* Glass Effect */
   background: rgba(189, 189, 189, 0.14);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -168,12 +164,55 @@ div.project-glass-div{
   -webkit-backdrop-filter: blur(10.3px);
   border: 1px solid rgba(189, 189, 189, 0.22);
 }
+/* 
+div.project-glass-div::before,
+div.project-glass-div::after{
+  transition: 0.3s
+} */
 
 div.project-glass-div:hover{
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.10);
   cursor: pointer;
+  /* Glowing Border */
+}
+
+div.project-glass-div:hover::before, 
+div.project-glass-div-hover::after {
+  content: '';
+  position: absolute;
+  inset: -0.15rem;
+  background: conic-gradient(from var(--gradient-angle),
+  var(--conic-color-1),
+  var(--conic-color-2), 
+  var(--conic-color-3),
+  var(--conic-color-1));
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+  z-index: -1;
+  overflow: hidden;
+  mask: linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  padding: 0.15rem;  /* This creates the "hole" in the middle */
+  opacity: 1.2;
+  filter: blur(0.5em);
+}
+
+div.project-glass-div-hover::after {
+  filter: blur(3.5rem);
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotation {
+  0% {--gradient-angle: 0deg;}
+  100% {--gradient-angle: 360deg;}
 }
 
 .projects-title{
@@ -193,7 +232,7 @@ ul, ol {
     list-style: none;
 }
 
-#frontpage {
+section#frontpage {
   z-index: 1;
   position: relative;
 }
