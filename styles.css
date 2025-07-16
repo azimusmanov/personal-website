@@ -21,31 +21,8 @@ html {
   padding: 30px 0;
   display: flex;
   justify-content: center;
-  z-index: 10;
+  /* z-index: 10; */
   z-index: 1000;
-}
-
-footer{
-  scroll-snap-type: none;
-  scroll-snap-align: none;
-  height: 100px;
-  width: 100vw;
-}
-
-#contact-footer{
-  height: 20vh;
-  color: white;
-  z-index: 9999;
-  background: rgba(189, 189, 189, 0.14);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10.3px);
-  -webkit-backdrop-filter: blur(10.3px);
-  border: 1px solid rgba(189, 189, 189, 0.22);
-}
-
-#social-links{
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .logo {
@@ -219,39 +196,48 @@ body {
   }
   
 
-  /* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+  footer{
+    scroll-snap-type: none;
+    scroll-snap-align: none;
+    height: 100px;
+    width: 100vw;
+  }
+  
+  #contact-footer{
+    height: 20vh;
+    color: white;
+    z-index: 9999;
+    background: rgba(189, 189, 189, 0.14);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    border: 1px solid rgba(189, 189, 189, 0.22);
+  }
+/*   
+  #social-links{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  } */
 
-/* #train-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: null;
-  padding: 40px 0;
-} */
-/* 
-.pixel-sign {
-  background: #000;
-  border: 6px solid #666;
-  border-radius: 10px;
-  padding: 30px 40px;
-  font-family: 'Press Start 2P', monospace;
-  color: #FFCC00;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  box-shadow: inset 0 0 20px #000;
-}
+  .socials_container{
+    display: flex;
+    gap: 20px;
+  }
 
-.train-letter {
-  font-size: 28px;
-  background: #111;
-  padding: 16px 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 6px rgba(255, 204, 0, 0.7);
-}
+  .socials_container a{
+    background: rgba(244, 244, 244, 0.5);
+    padding: 1em;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: grid;
+    box-shadow: 0 5px 10px rgba(0,0,0, 0.5);
+  }
 
-.train-destination {
-  font-size: 14px;
-  letter-spacing: 2px;
-  white-space: nowrap;
-} */
+  .socials_container a svg{
+    height: 32px;
+    fill: white;
+  }
+  
