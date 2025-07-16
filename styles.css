@@ -25,6 +25,51 @@ html {
   z-index: 1000;
 }
 
+/* === BLOB ANIMATION ON HOMEPAGE === */
+  .blob-outer-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    inset: 0;
+    margin: auto;
+    filter: blur(100px);
+    opacity: 0.5;
+  }
+
+  .blob-inner-container {
+    border-radius: 99999px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1000px;
+    overflow: hidden;
+    background-color: #fff;
+    transform: scale(0.6);
+  }
+
+  .blob {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    margin: auto;
+    background: conic-gradient(from 0deg, purple, rgb(91, 34, 160), rgb(151, 49, 151), rgb(83, 15, 81), purple);
+    animation: spinBlob 8s linear infinite;
+  }
+
+  @keyframes spinBlob {
+    0% {
+      transform: rotate(0deg) scale(2);
+    }
+
+    100% {
+      transform: rotate(1turn) scale(2);
+    }
+  }
+
 .logo {
   color: white;
   font-size: 30px;
@@ -454,49 +499,6 @@ body {
   }
 
   .simple-animation {
-    animation: fadeInSimple 2s ease-in 0.5s 1 normal both;
+    animation: fadeInSimple 1s ease-in 0.5s 1 normal both;
   }
 
-  .blob-outer-container{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    inset: 0;
-    margin: auto;
-    filter: blur(100px);
-    opacity: 0.5;
-  }
-
-  .blob-inner-container {
-    border-radius: 99999px;
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 100vw;
-    height: 100vh;
-    min-width: 1000px;
-    overflow: hidden;
-    background-color: #fff;
-    transform: scale(0.6);
-  }
-
-  .blob {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    inset: 0;
-    margin: auto;
-    background: conic-gradient(from 0deg, purple, rgb(91, 34, 160), rgb(151, 49, 151), rgb(83, 15, 81), purple);
-    animation: spinBlob 8s linear infinite;
-  }
-
-  @keyframes spinBlob {
-    0% {
-      transform: rotate(0deg) scale(2);
-    }
-
-    100% {
-      transform: rotate(1turn) scale(2);
-    }
-  }
