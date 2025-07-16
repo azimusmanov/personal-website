@@ -50,7 +50,7 @@ html {
   border-radius: 15px;
   transition: 0.3s;
   position: relative;
-  z-index: 999;
+  z-index: 1;
     /* Glass Effect */
   background: rgba(189, 189, 189, 0.14);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -178,8 +178,8 @@ div.project-glass-div:hover{
   /* Glowing Border */
 }
 
-div.project-glass-div:hover::before, 
-div.project-glass-div-hover::after {
+.glowing-border:hover::before, 
+.glowing-border:hover::after {
   content: '';
   position: absolute;
   inset: -0.15rem;
@@ -190,17 +190,17 @@ div.project-glass-div-hover::after {
   var(--conic-color-1));
   border-radius: inherit;
   animation: rotation 20s linear infinite;
-  z-index: -1;
+  z-index: 10;
   overflow: hidden;
   mask: linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
   mask-composite: exclude;
   padding: 0.15rem;  /* This creates the "hole" in the middle */
   opacity: 1.2;
-  filter: blur(0.5em);
+  filter: blur(3.5em);
 }
 
-div.project-glass-div-hover::after {
+.glowing-border::after {
   filter: blur(3.5rem);
 }
 
@@ -430,10 +430,10 @@ body {
   /* TITLE ANIMATION KEYFRAMES APPLIED*/
   #title-wrapper h1 {
     animation-name: azimLoadInTop;
-    animation-duration: 1.5s;
+    animation-duration: 0.85s;
     animation-timing-function: ease-in-out;
     /* animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); */
-    animation-delay: 0.25s;
+    animation-delay: 0.15s;
     animation-timing-function: 1;
     animation-direction: normal;
     animation-fill-mode: both;
@@ -455,4 +455,48 @@ body {
 
   .simple-animation {
     animation: fadeInSimple 2s ease-in 0.5s 1 normal both;
+  }
+
+  .blob-outer-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    inset: 0;
+    margin: auto;
+    filter: blur(100px);
+    opacity: 0.5;
+  }
+
+  .blob-inner-container {
+    border-radius: 99999px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1000px;
+    overflow: hidden;
+    background-color: #fff;
+    transform: scale(0.6);
+  }
+
+  .blob {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    margin: auto;
+    background: conic-gradient(from 0deg, purple, rgb(91, 34, 160), rgb(151, 49, 151), rgb(83, 15, 81), purple);
+    animation: spinBlob 8s linear infinite;
+  }
+
+  @keyframes spinBlob {
+    0% {
+      transform: rotate(0deg) scale(2);
+    }
+
+    100% {
+      transform: rotate(1turn) scale(2);
+    }
   }
