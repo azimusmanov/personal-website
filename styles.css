@@ -348,7 +348,7 @@ body {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-top: 10px solid var(--accent-color);
-    transform: translateY(-42px) rotate(25deg);
+    transform: translateY(-30px) rotate(25deg);
     opacity: 0;
     transition: 200ms cubic-bezier(0.42,0,.44,1.68);
   }
@@ -388,6 +388,7 @@ body {
     }
   }
 
+  /* TITLE ANIMATION KEYFRAMES APPLIED*/
   #title-wrapper h1 {
     animation-name: azimLoadInTop;
     animation-duration: 1.5s;
