@@ -199,7 +199,7 @@ body {
   footer{
     scroll-snap-type: none;
     scroll-snap-align: none;
-    height: 100px;
+    height: 20vh;
     width: 100vw;
   }
   
@@ -213,18 +213,13 @@ body {
     -webkit-backdrop-filter: blur(10.3px);
     border: 1px solid rgba(189, 189, 189, 0.22);
   }
-/*   
-  #social-links{
-    margin-top: 20px;
-    margin-bottom: 20px;
-  } */
 
-  .socials_container{
+  .socials-container{
     display: flex;
     gap: 20px;
   }
 
-  .socials_container a{
+  .socials-container a{
     background: rgba(244, 244, 244, 0.5);
     padding: 1em;
     border-radius: 50%;
@@ -234,10 +229,68 @@ body {
     flex-shrink: 0;
     display: grid;
     box-shadow: 0 5px 10px rgba(0,0,0, 0.5);
+    position: relative;
+    text-align: center;
   }
 
-  .socials_container a svg{
+  .socials-container a svg{
     height: 32px;
     fill: white;
   }
+
+  .socials-container a svg#linkedinSVG{
+    height: 32px;
+    width: 32px;
+    fill: white;
+  }
   
+  .socials-container a::before{
+    content: attr(data-social);
+    position: absolute;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 0 0.5em 1em;
+    border-radius: 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(-30px) translateX(-50%) rotate(25deg);
+    opacity: 0;
+    transition: 200ms cubic-bezier(0.42,0,.44,1.68);
+    text-align: center;
+  }
+
+  .socials-container a::before#insta{
+    right: -20%;
+  }
+
+  .socials-container a:hover{
+    background-color: var(--accent-color);
+  }
+
+  .socials-container a::after{
+    /* TRIANGLE BELOW THE SOCIAL THING */
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--accent-color);
+    transform: translateY(-42px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms cubic-bezier(0.42,0,.44,1.68);
+  }
+
+  /* TEXT BOX */
+  .socials-container a:hover::before{
+    /* Lower Y transform (closer to 0) is closer to icon (further down screen) */
+    transform: translateY(-65px) rotate(0);
+    text-align: center;
+    opacity: 1;
+  }
+
+  /* TRIANGLE */
+  .socials-container a:hover::after{
+    transform: translateY(-34px) rotate(0) translateX(140%);
+    opacity: 1;
+  }
