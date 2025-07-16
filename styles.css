@@ -35,7 +35,7 @@ html {
 
 .navbar{
   display: flex;
-  gap: 40px;
+  gap: 20px;
   position: relative;
   z-index: 999;
 }
@@ -299,4 +299,57 @@ body {
     /* === SHOW COLOR ON HOVER ON CIRCLE === */
   .socials-container a:hover{
     background-color: var(--accent-color);
+  }
+
+  /*=== TITLE ANIMATIONS===*/
+  @keyframes azimLoadInTop {
+    from {
+      transform: translateY(-300px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes azimLoadInBottom{
+    from{
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  #title-wrapper h1 {
+    animation-name: azimLoadInTop;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    /* animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+    animation-delay: 0.25s;
+    animation-timing-function: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+  }
+
+  #title-wrapper h3 {
+    animation: azimLoadInBottom 1s ease-in-out 0.75s 1 normal both;
+  }
+
+  @keyframes fadeInSimple {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .simple-animation {
+    animation: fadeInSimple 2s ease-in 0.5s 1 normal both;
   }
