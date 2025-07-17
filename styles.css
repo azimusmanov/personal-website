@@ -98,13 +98,18 @@ html {
   z-index: 1;
     /* Glass Effect */
   background: rgba(189, 189, 189, 0.14);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10.3px);
   -webkit-backdrop-filter: blur(10.3px);
   border: 1px solid rgba(189, 189, 189, 0.22);
 }
 
 .navbar a:hover{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar a.current-section{
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.2);
 }
@@ -204,7 +209,7 @@ div.project-glass-div{
   z-index: 80;
     /* Glass Effect */
   background: rgba(189, 189, 189, 0.14);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10.3px);
   -webkit-backdrop-filter: blur(10.3px);
   border: 1px solid rgba(189, 189, 189, 0.22);
