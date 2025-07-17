@@ -28,7 +28,7 @@ html {
 /* === BLOB ANIMATION ON HOMEPAGE === */
   .blob-outer-container{
     position: absolute;
-    height: 100%;
+    height: 90%;
     width: 100%;
     z-index: 0;
     inset: 0;
@@ -473,7 +473,7 @@ body {
   }
 
   /* TITLE ANIMATION KEYFRAMES APPLIED*/
-  #title-wrapper h1 {
+  .playAnim#title-wrapper h1 {
     animation-name: azimLoadInTop;
     animation-duration: 0.85s;
     animation-timing-function: ease-in-out;
@@ -484,10 +484,11 @@ body {
     animation-fill-mode: both;
   }
 
-  #title-wrapper h3 {
+  .playAnim#title-wrapper h3 {
     animation: azimLoadInBottom 1s ease-in-out 0.75s 1 normal both;
   }
 
+  /* === SIMPLE FADE IN ANIMATION === */
   @keyframes fadeInSimple {
     from {
       opacity: 0;
@@ -498,7 +499,18 @@ body {
     }
   }
 
-  .simple-animation {
+  .simple-animation { 
+    /* This is the animation for the header ONLY */
     animation: fadeInSimple 1s ease-in 0.5s 1 normal both;
   }
+
+
+  .playAnim#blob-animation {
+    animation: fadeInSimple 1s ease-in 0.5s 1 normal both;
+  }
+
+  .playAnim h2, .playAnim p {
+    animation: fadeInSimple 1s ease-in 0.5s 1 normal both;
+  }
+
 

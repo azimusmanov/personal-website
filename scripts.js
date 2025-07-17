@@ -1,14 +1,14 @@
 const body = document.getElementsByTagName("body")[0];
-const hyperlinks = document.getElementsByTagName("a");
-window.addEventListener('scroll', function() {
-  const frontpage = document.getElementById('frontpage');
-  const video = document.getElementById('bg-video');
-  const rect = frontpage.getBoundingClientRect();
 
-  // If the top section is out of view, hide the video
-  if (rect.bottom <= 0) {
-    video.style.display = 'none';
-  } else {
-    video.style.display = 'block';
-  }
+const animatables = document.querySelectorAll('.animatable');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('playAnim');
+        } else {
+            entry.target.classList.remove('playAnim'); // Optional: for replay
+        }
+    });
 });
+
+animatables.forEach(el => observer.observe(el));
