@@ -32,7 +32,7 @@ const current_section_observer = new IntersectionObserver((entries) => {
             }
         }
     })
-}, { threshold: 1 }
+}, { threshold: 0.9 }
 );
 
 sections.forEach(el => current_section_observer.observe(el));
