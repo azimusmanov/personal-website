@@ -305,7 +305,7 @@ body {
     text-align: center;
     background: rgba(10, 10, 10, 0.99);
     color: white;
-    background-image: url(background-large.jpg);
+    background-image: url(/assets/background-large.jpg);
     background-size: 100% 500vh;
     background-repeat: no-repeat;
     /* background: linear-gradient(to right, #6185ff, #ff616f); */

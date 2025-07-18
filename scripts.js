@@ -5,7 +5,6 @@ let sectionNumber;
 
 // JS function & Code for replaying animation each time section is in 
 // viewport, instead of once on load
-
 const animatables = document.querySelectorAll('.animatable');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -17,6 +16,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
+// Applying function
 animatables.forEach(el => observer.observe(el));
 
 // JS function for hover effect on navbar cards to play when
@@ -35,4 +35,5 @@ const current_section_observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 }
 );
 
+// Applying function
 sections.forEach(el => current_section_observer.observe(el));
