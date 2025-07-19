@@ -21,8 +21,7 @@ html {
   padding: 30px 0;
   display: flex;
   justify-content: center;
-  /* z-index: 10; */
-  z-index: 1000;
+  z-index: 900;
 }
 
 /* === BLOB ANIMATION ON HOMEPAGE === */
@@ -84,7 +83,7 @@ html {
   display: flex;
   gap: 20px;
   position: relative;
-  z-index: 999;
+  z-index: 901;
 }
 
 .navbar a.glass-card {
@@ -221,11 +220,6 @@ div.project-glass-div{
   -webkit-backdrop-filter: blur(10.3px);
   border: 1px solid rgba(189, 189, 189, 0.22);
 }
-/* 
-div.project-glass-div::before,
-div.project-glass-div::after{
-  transition: 0.3s
-} */
 
 div.project-glass-div:hover{
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -281,12 +275,77 @@ div.project-glass-div p{
   font-size: 18px;
 }
 
+/* Project Pop Up Window CSS */
+
+.hidden {
+  display: none;
+}
+
+div.project-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  background: rgba(10,10,10,0.3); /* optional: dim background */
+}
+
+div.project-popup .popup-content {
+  width: 90vw;
+  height: 90vh;
+  max-width: 900px;   /* optional: max size for large screens */
+  max-height: 900px;
+  background: rgba(200, 200, 200, 0.54);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+  border: 1px solid rgba(189, 189, 189, 0.22);
+  border-radius: 15px;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+button.close-button {
+  color: white !important;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 0 10px;
+  border-bottom: 2px solid transparent;
+  padding: 3px 5px;
+  border-radius: 15px;
+  transition: 0.3s;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transform: translateX(-50%);
+    /* Glass Effect */
+  background: rgba(200, 10, 10, 0.80);
+  background: radial-gradient(rgba(200, 10, 10, 0.80), rgba(180, 10, 50, 0.60));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+  border: 1px solid rgba(189, 189, 189, 0.22);
+  z-index: 10000;
+}
+
+button.close-button:hover{
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+
 #social-links-and-contact{
   margin-top: 100px;
 }
 
 ul, ol {
-    list-style: none;
+  list-style: none;
 }
 
 section#frontpage {

@@ -3,6 +3,12 @@ const navbarSections = document.getElementsByClassName("navbarelem");
 const sectionIds = ["frontpage", "about-me", "experience", "projects", "contact-footer"];
 let sectionNumber;
 
+// Getting a NodeList of clickble project glass divs
+const projectClickables = document.querySelectorAll(".project-glass-div");
+
+// Getting a NodeList of close buttons
+const closeButtons = document.querySelectorAll(".close-button");
+
 // JS function & Code for replaying animation each time section is in 
 // viewport, instead of once on load
 const animatables = document.querySelectorAll('.animatable');
@@ -37,3 +43,33 @@ const current_section_observer = new IntersectionObserver((entries) => {
 
 // Applying function
 sections.forEach(el => current_section_observer.observe(el));
+
+// Event Listener for click on project-glass-div
+projectClickables.forEach(card => {
+    card.addEventListener("click", () => {
+        console.log("Project card clicked!"); // Debug log
+        const popupId = card.dataset.popup;
+        console.log("Popup ID:", popupId); // Debug log
+        const popup = document.getElementById(popupId);
+        console.log("Found popup:", popup); // Debug log
+        popup.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // scroll lock
+        console.log("Popup opened successfully"); // Debug log
+    });
+});
+
+// Event Listener for close-button
+closeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        console.log("Close button clicked!"); // Debug log
+        const popup = button.closest('.project-popup');
+        console.log("Found popup:", popup); // Debug log
+        if (popup) {
+            popup.classList.add("hidden");
+            document.body.style.overflow = "";
+            console.log("Popup closed successfully"); // Debug log
+        } else {
+            console.log("No popup found!"); // Debug log
+        }
+    });
+});
