@@ -38,7 +38,7 @@ const current_section_observer = new IntersectionObserver((entries) => {
             }
         }
     })
-}, { threshold: 0.5 }
+}, { threshold: 0.99}
 );
 
 // Applying function

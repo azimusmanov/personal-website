@@ -277,8 +277,8 @@ div.project-glass-div p{
 
 /* Project Pop Up Window CSS */
 
-.hidden {
-  display: none;
+.project-popup.hidden {
+  display: none !important;
 }
 
 div.project-popup {
