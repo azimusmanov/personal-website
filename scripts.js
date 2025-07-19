@@ -53,7 +53,9 @@ projectClickables.forEach(card => {
         const popup = document.getElementById(popupId);
         console.log("Found popup:", popup); // Debug log
         popup.classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // scroll lock
+        // Fix scroll lock - target both html and body with !important
+        document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+        document.body.style.setProperty('overflow', 'hidden', 'important');
         console.log("Popup opened successfully"); // Debug log
     });
 });
@@ -66,7 +68,9 @@ closeButtons.forEach(button => {
         console.log("Found popup:", popup); // Debug log
         if (popup) {
             popup.classList.add("hidden");
-            document.body.style.overflow = "";
+            // Fix scroll unlock - target both html and body
+            document.documentElement.style.removeProperty('overflow');
+            document.body.style.removeProperty('overflow');
             console.log("Popup closed successfully"); // Debug log
         } else {
             console.log("No popup found!"); // Debug log
