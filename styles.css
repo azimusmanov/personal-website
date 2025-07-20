@@ -277,7 +277,8 @@ div.project-glass-div p{
 
 /* Project Pop Up Window CSS */
 .project-popup.hidden {
-  display: none !important;
+  display: none;
+
 }
 
 div.project-popup {
@@ -667,4 +668,17 @@ body {
     animation: fadeInSimple 1s ease-in 0.5s 1 normal both;
   }
 
+  @keyframes fadeOutSimple{
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .fadeOutHidden {
+    animation: fadeOutSimple 0.5s ease-in-out !important;
+    display: none;
+  }
 

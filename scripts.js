@@ -62,18 +62,21 @@ projectClickables.forEach(card => {
 
 // Event Listener for close-button
 closeButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        console.log("Close button clicked!"); // Debug log
-        const popup = button.closest('.project-popup');
-        console.log("Found popup:", popup); // Debug log
-        if (popup) {
-            popup.classList.add("hidden");
-            // Fix scroll unlock - target both html and body
-            document.documentElement.style.removeProperty('overflow');
-            document.body.style.removeProperty('overflow');
-            console.log("Popup closed successfully"); // Debug log
-        } else {
-            console.log("No popup found!"); // Debug log
-        }
-    });
+  button.addEventListener("click", () => {
+    const popup = button.closest('.project-popup');
+    if (popup) {
+      // Remove hidden if present, add fadeOutHidden
+      popup.classList.remove("hidden");
+      popup.classList.add("fadeOutHidden");
+
+      // Listen for animation end, then hide for real
+      popup.addEventListener('animationend', function handler() {
+        popup.classList.remove("fadeOutHidden");
+        popup.classList.add("hidden");
+        popup.removeEventListener('animationend', handler);
+      });
+      document.documentElement.style.removeProperty('overflow');
+      document.body.style.removeProperty('overflow');
+    }
+  });
 });
