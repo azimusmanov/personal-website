@@ -1,5 +1,9 @@
 # personal-website
 
-Files for my personal website, hosted at azimusmanov.com
+Welcome to my Personal Portfolio Website! I'm Azim Usmanov, a passionate developer and designer dedicated to creating engaging and user-friendly web experiences. This website showcases my skills, projects, and work history.
 
-I have no prior experience with, html, css, or js, so I'm learning these languages throught this personal project. Expect more to come soon!
+HTML5 CSS3 (Flexbox, Grid, Transitions, Animations) JavaScript (ES6+)
+
+Libraries & Tools:
+
+simpleicons.org for contact icons
