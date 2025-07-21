@@ -155,7 +155,7 @@
       <h3 class="popup-blurb">Wildhacks 2025: Azim Usmanov, Nandan Dhanesh, Vaibhav Rangan, Rohan Sekhar</h3>
         <img src="/assets/project-assets/mizapic1.png" class="popup-image-1">
         <video class="popup-video-2" controls>
-          <source src="https://www.youtube.com/watch?v=Rzs7HSwmueI">
+          <source src="/assets/project-assets/mizavideo.mp4">
             Your browser does not support the video tag.
         </video>
         <img src="/assets/project-assets/mizapic2.png" class="popup-image-3">
@@ -179,16 +179,27 @@
       <button class="close-button" data-popup="audio-spectrum">X</button>
       <h2 class="popup-title">Audio Spectrum Visualizer</h2>
       <h3 class="popup-blurb">A short blurb</h3>
-      <img src="#" class="popup-image-1">
-      <img src="#" class="popup-image-2">
-      <img src="#" class="popup-image-3">
-      <p class="popup-description">A real-time audio spectrum visualizer for music and sound analysis.</p>
+      <!-- <img src="#" class="popup-image-1"> -->
+      <video class="popup-video-2" controls>
+          <source src="/assets/project-assets/audiodemo.mp4">
+            Your browser does not support the video tag.
+      </video>      
+      <!-- <img src="#" class="popup-image-3"> -->
+      <p class="popup-description">
+        For this lab, me and my lab partner Benjamin Rivera Flores developed an audio spectrum visualizer using the ESP32 microcontroller and a 64x32 matrix LED display. 
+        We wrote code in C++ using the Arduino framework, managing hardware components like the INMP441 I2S microphone for real-time 
+        audio sampling. Our implementation involved configuring the ESP32 to collect sound data via I2S, then applying a Fast Fourier Transform (FFT)
+         to convert time-domain samples into frequency-domain data. From there, we divided the frequency spectrum into 16 bands, smoothed the data 
+         using a buffer, and displayed the amplitude of each band as a colored vertical bar on the LED matrix. The color gradient—ranging 
+         from green at the bottom to red at the top—visually represents the energy of each frequency band.
+        <br><br>
+        The core of our display logic was based on a prior lab that focused on audio filtering, which gave us the foundation for processing microphone input. We extended this by implementing real-time visualization, leveraging the capabilities of the ArduinoFFT and MatrixPanel_I2S_DMA libraries. This integration of digital signal processing and hardware interfacing demonstrated how filtered frequency data could be accurately mapped to visual output, giving a clear, real-time display of the surrounding audio environment.
+      </p>
       <ul class="popup-tech">
-        <li>JavaScript</li>
-        <li>Web Audio API</li>
-        <li>Canvas</li>
+        <li>ESP32</li>
+        <li>Breadboarding</li>
+        <li>C++</li>
       </ul>
-      <a class="popup-link" href="#" target="_blank">View Project</a>
     </div>
   </div>
 
