@@ -221,6 +221,57 @@ div.project-glass-div{
   border: 1px solid rgba(189, 189, 189, 0.22);
 }
 
+/* ...existing code... */
+
+/* Responsive fix for short screens, keep project cards square */
+@media (max-height: 600px) {
+  section#projects {
+    height: 100vh;
+    min-height: 0;
+    overflow-y: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  div#projects-wrapper {
+    gap: 20px;
+    padding: 10px;
+  }
+  div.project-glass-div {
+    aspect-ratio: 1 / 1;
+    width: min(40vw, 300px);
+    height: auto;
+    max-height: 40vw;
+    min-width: 140px;
+    min-height: 140px;
+    max-width: 300px;
+    max-height: 300px;
+    padding: 1em;
+    overflow: hidden;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* For very small screens, stack vertically and keep square */
+@media (max-width: 400px) {
+  div#projects-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  div.project-glass-div {
+    aspect-ratio: 1 / 1;
+    width: min(80vw, 200px);
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+/* ...existing code... */
+
 div.project-glass-div:hover{
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.2);
@@ -505,7 +556,7 @@ body {
     text-align: center;
     background: rgba(10, 10, 10, 0.99);
     color: white;
-    background-image: url(/assets/background-large.jpg);
+    background-image: url(/assets/purplepinkgradientbg2.png);
     background-size: 100% 500vh;
     background-repeat: no-repeat;
     /* background: linear-gradient(to right, #6185ff, #ff616f); */
