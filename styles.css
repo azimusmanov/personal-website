@@ -240,7 +240,7 @@ div.project-glass-div:hover{
   var(--conic-color-3),
   var(--conic-color-1));
   border-radius: inherit;
-  animation: rotation 20s linear infinite;
+  animation: rotation 3s linear infinite;
   z-index: 10;
   overflow: hidden;
   mask: linear-gradient(#fff 0 0) content-box, 
@@ -411,7 +411,7 @@ h2.popup-title{
   grid-row: 3 / span 5; 
   grid-column: 2;
   margin-left: 5%;
-  transform: translateY(-2em);
+  /* transform: translateY(-5em); */
   display: flex;
   justify-content: center;
   align-items:first baseline;
@@ -440,6 +440,44 @@ h2.popup-title{
 }
 
 
+/* Styling for smaller screens */
+@media (max-width: 800px) {
+  div.project-popup .popup-content {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    height: 95vh;
+    max-width: 98vw;
+    max-height: 100vh;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  .popup-image-1,
+  .popup-image-2,
+  .popup-image-3,
+  .popup-video-2 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 1vh 0;
+    grid-column: auto;
+    grid-row: auto;
+    object-fit:cover;
+  }
+
+  h2.popup-title,
+  .popup-blurb,
+  .popup-description,
+  .popup-tech-heading,
+  .popup-tech,
+  .popup-link {
+    grid-column: auto;
+    grid-row: auto;
+    margin-left: 0;
+    transform: none;
+    padding: 0;
+  }
+}
 
 /* End of Project PopUp Styling */
 
