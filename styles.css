@@ -221,57 +221,6 @@ div.project-glass-div{
   border: 1px solid rgba(189, 189, 189, 0.22);
 }
 
-/* ...existing code... */
-
-/* Responsive fix for short screens, keep project cards square */
-@media (max-height: 600px) {
-  section#projects {
-    height: 100vh;
-    min-height: 0;
-    overflow-y: auto;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  div#projects-wrapper {
-    gap: 20px;
-    padding: 10px;
-  }
-  div.project-glass-div {
-    aspect-ratio: 1 / 1;
-    width: min(40vw, 300px);
-    height: auto;
-    max-height: 40vw;
-    min-width: 140px;
-    min-height: 140px;
-    max-width: 300px;
-    max-height: 300px;
-    padding: 1em;
-    overflow: hidden;
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* For very small screens, stack vertically and keep square */
-@media (max-width: 400px) {
-  div#projects-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  div.project-glass-div {
-    aspect-ratio: 1 / 1;
-    width: min(80vw, 200px);
-    height: auto;
-    max-width: 200px;
-    max-height: 200px;
-  }
-}
-
-/* ...existing code... */
-
 div.project-glass-div:hover{
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.2);
@@ -305,7 +254,45 @@ div.project-glass-div:hover{
 .glowing-border::after {
   filter: blur(3.5rem);
 }
-
+  /* Make projects section look good on small screens */
+@media (max-width: 680px) {
+  #projects-wrapper {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 8px;
+    align-items: flex-start;
+  }
+  .project-glass-div {
+    aspect-ratio: 1 / 1;
+    flex: 0 0 auto;
+    width: 120px;
+    min-width: 100px;
+    max-width: 140px;
+    min-height: 100px;
+    max-height: 140px;
+    padding: 0.5em;
+    margin: 0;
+    display: flex;
+    flex-direction: vertical;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-glass-div h2,
+  .project-glass-div p,
+  .project-glass-div a {
+    display: none !important;
+  }
+  .project-glass-div img {
+    display: block;
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+/*End of Media Query*/
 @property --gradient-angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -563,10 +550,104 @@ body {
     /* background-attachment: fixed; */
   }
 
-  #Azim{
-    border-radius: 50%;
-    border: 5px solid black;
+  div.about-me-div{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.10);
+    width: 70vw;
+    height: 75vh;
+    /* Glowing Border */
   }
+
+  /* TODO: MAKE MEDIA QUERY FOR SMALL SCREENS */
+  .about-me-contents{
+    padding: 2%;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(10, auto);
+    justify-content: center;
+    align-content: center;
+  }
+
+  .about-me-header{
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    transform: translate(40%, -40%);
+  }
+
+  #Azim{
+    border-radius: 10px;
+    /* height: max(30vh, 200px);
+    width: max(15vw, 150px); */
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-right: 12px;
+    /* border: 5px solid black; */
+    transform: translateY(-2%);
+  }
+
+  #p1{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-left: 12px;
+    transform: translateY(-2%);
+  }
+
+  #p2{
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 1;
+    margin-right: 12px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .sailing{
+    border-radius: 10px;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row: 5 / span 1;
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 12px;
+    /* justify-self: stretch; */
+    /* max-height: 120px;
+    max-width: 120px; */
+  }
+  
+  #Azim::before, 
+  #Azim::after {
+  content: '';
+  position: absolute;
+  inset: -0.15rem;
+  background: conic-gradient(from var(--gradient-angle),
+  var(--conic-color-1),
+  var(--conic-color-2), 
+  var(--conic-color-3),
+  var(--conic-color-1));
+  border-radius: inherit;
+  animation: rotation 3s linear infinite;
+  z-index: 10;
+  overflow: hidden;
+  mask: linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  padding: 0.15rem;  /* This creates the "hole" in the middle */
+  opacity: 1.2;
+  filter: blur(3.5em);
+}
+
+#Azim::after {
+  filter: blur(3.5rem);
+}
 
   main {
     width: 100%;
@@ -789,4 +870,3 @@ body {
     animation: fadeOutSimple 0.5s ease-in-out !important;
     display: none;
   }
-
