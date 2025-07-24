@@ -568,7 +568,24 @@ body {
     justify-content: center;
     align-content: center;
   }
+/* Glass border and hover scale for About Me images */
+#Azim.glowing-border,
+.sailing.glowing-border {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  box-shadow: 0 4px 30px rgba(120, 120, 255, 0.25), 0 0 0 2px rgba(255,255,255,0.25);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  /* Optional: subtle glassy background */
+}
 
+#Azim.glowing-border:hover,
+.sailing.glowing-border:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 40px rgba(120, 120, 255, 0.35), 0 0 0 4px rgba(255,255,255,0.35);
+  z-index: 2;
+}
   .about-me-contents.playAnim{ 
     animation: fadeInSimple 1.25s ease-in-out 0.50s 1 normal both;
   }
@@ -824,9 +841,10 @@ body {
   /* ON HOVER SHOW BUBBLE */
   .socials-container a:hover::before{
     /* Lower Y transform (closer to 0) is closer to icon (further down screen) */
-    transform: translateY(-65px) rotate(0);
+    transform: translateY(-45px) rotate(0);
     text-align: center;
     opacity: 1;
+    z-index: 9999;
   }
 
   /* ========== TRIANGLE (TOOLTIP POINTER) ========== */
@@ -839,14 +857,15 @@ body {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-top: 10px solid var(--accent-color);
-    transform: translateY(-30px) rotate(25deg);
+    transform: translateY(-10px) rotate(25deg);
     opacity: 0;
     transition: 200ms cubic-bezier(0.42,0,.44,1.68);
+    z-index: 9999;
   }
 
   /* SHOW TRIANGLE ON HOVER */
   .socials-container a:hover::after{
-    transform: translateY(-34px) rotate(0) translateX(140%);
+    transform: translateY(-12px) rotate(0) translateX(140%);
     opacity: 1;
   }
 
