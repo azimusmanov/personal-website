@@ -559,7 +559,7 @@ body {
     /* Glowing Border */
   }
 
-  /* TODO: MAKE MEDIA QUERY FOR SMALL SCREENS */
+  /* ABOUT ME STYLING */
   .about-me-contents{
     padding: 2%;
     display: grid;
@@ -576,6 +576,13 @@ body {
     align-self: center;
     transform: translate(40%, -40%);
   }
+
+  /* About me Hover Not working yet */
+  /* .about-me-divs:hover{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.10);
+  } */
 
   #Azim{
     border-radius: 10px;
@@ -622,6 +629,54 @@ body {
     /* max-height: 120px;
     max-width: 120px; */
   }
+
+  /* Responsive About Me section for smaller screens */
+  /* tbh i got lazy and had copilot do this */
+@media (max-width: 1450px) {
+  .about-me-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: 98vw;
+    padding: 2vw 1vw;
+    box-sizing: border-box;
+  }
+  .about-me-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2vh;
+  }
+  .about-me-header,
+  #Azim,
+  #p1,
+  #p2,
+  .sailing {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #Azim, .sailing {
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+  }
+  .about-me-header {
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    transform: none !important;
+  }
+  #p1, #p2 {
+    font-size: 1.1em;
+    text-align: center;
+  }
+}
   
   #Azim::before, 
   #Azim::after {
