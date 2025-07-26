@@ -79,6 +79,10 @@ html {
   cursor: default;
 }
 
+.logo:hover{
+  transform: scale(1.10);
+}
+
 .navbar{
   display: flex;
   gap: 20px;
