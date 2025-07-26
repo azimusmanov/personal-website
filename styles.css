@@ -739,32 +739,112 @@ body {
   div {
     margin-bottom: 40px;
   }
-  /* For safari formatting */
-  .experience-logo-rectangle, .experience-logo-square {
-    max-width: 100px;
-    max-height: 100px;
-    width: auto;
-    height: auto;
+
+/* ----- base sizes for logos ----- */
+
+.div#experience-contents {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+section#experience h2{
+  transform: translateY(-8vh);
+}
+
+:root {
+    --line-thickness: 7px;
+    --line-col: #B933AD;
+}
+
+/* Container for the timeline */
+.stripmap {
+    margin-top: 0;
+    margin-left: 0;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+/* Individual timeline items */
+.stripmap li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* First item - center the top dot exactly */
+.stripmap li:first-child {
+    margin-top: -13px; /* Pull up by half dot height to center perfectly */
+}
+
+/* Logo positioning - fixed width container */
+.logo {
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* Make all logos fit in same space */
+.logo.rect {
+    width: 170px;
+    height: 50px;
     object-fit: contain;
 }
 
-  .experience-logo-rectangle{
-    height: 50px;
-    width: 170px;
-    margin-right: 50px;
-  }
-
-  .experience-logo-square{
-    height: 68px;
+.logo.square {
     width: 68px;
-    margin-right: 50px;
-  }
+    height: 68px;
+    object-fit: contain;
+    margin-left: calc(170px - 68px); /* Push square logos right to align dots */
+}
 
-  div#experience li {
-    display: flex;
-    align-items: center;
+/* Dot positioning - right after logo */
+.dot {
+    width: 20px;
+    height: 20px;
+    border: 4px solid var(--line-col);
+    background: #000;
+    border-radius: 50%;
+    margin-right: 20px;
+    flex-shrink: 0;
+    z-index: 2;
+    transform: translate(2px, -3px);
+}
+
+/* Role text */
+.role {
+    flex: 1;
+    text-align: left;
+}
+
+/* Vertical line - positioned to go through dots */
+.stripmap::before {
+    content: "";
+    position: absolute;
+    left: calc(170px + 20px + 9px); /* logo width + margin + half dot width */
+    top: 13px; /* Start at center of first dot (half of 26px dot height) */
+    height: calc(100vh - 130px); /* Line height: viewport minus 130px from top */
+    width: var(--line-thickness);
+    background: var(--line-col);
+    z-index: 1;
+}             /* now on the left  */
+
+/* ----- responsive tweaks ----- */
+@media (max-width:600px){
+  .stripmap li{
+    grid-template-columns:32px 1fr;  /* drop to two cols: dot + everything else */
   }
-  
+  .stripmap::before{ left:16px; }     /* shift center line under the dot column */
+  .role{
+    text-align:left;
+    margin-top:0.25rem;
+  }
+  .logo{
+    grid-column:2;        /* logo appears under role text */
+    margin-top:0.25rem;
+  }
+}
+
 
   footer{
     scroll-snap-type: none;
