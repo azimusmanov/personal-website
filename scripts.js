@@ -80,3 +80,18 @@ closeButtons.forEach(button => {
     }
   });
 });
+
+
+const experienceSection = document.getElementById('experience');
+
+const hideObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio < 0.7) {
+      experienceSection.style.visibility = 'hidden';
+    } else {
+      experienceSection.style.visibility = 'visible';
+    }
+  });
+}, { threshold: [0, 0.7, 1] });
+
+hideObserver.observe(experienceSection);
