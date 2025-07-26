@@ -593,7 +593,7 @@ body {
     animation: fadeInSimple 0.55s ease-in-out 0.15s 1 normal both;
   }
 
-  section#experience .playAnim{
+  .div#experience-contents.playAnim{
     animation: fadeInSimple 0.55s ease-in-out 0.15s 1 normal both;
   }
 
@@ -752,7 +752,7 @@ body {
 }
 
 section#experience h2{
-  transform: translateY(-8vh);
+  transform: translateY(-6vh);
 }
 
 :root {
@@ -767,6 +767,7 @@ section#experience h2{
     position: relative;
     list-style: none;
     padding: 0;
+    z-index: 2;
 }
 
 /* Individual timeline items */
@@ -775,11 +776,13 @@ section#experience h2{
     align-items: center;
     margin-bottom: 40px;
     position: relative;
+    transform: translate(0, -1vh);
+    z-index: 3;
 }
 
 /* First item - center the top dot exactly */
 .stripmap li:first-child {
-    margin-top: -13px; /* Pull up by half dot height to center perfectly */
+    margin-top: -13px; 
 }
 
 /* Logo positioning - fixed width container */
