@@ -964,6 +964,13 @@ section#experience h2{
     background-color: var(--accent-color);
   }
 
+  #phone svg{
+  vertical-align: middle;
+  justify-self: center;
+  align-self: center;
+  transform: scale(1.25);
+}
+
   /*=== TITLE ANIMATIONS===*/
   @keyframes azimLoadInTop {
     from {
