@@ -95,3 +95,20 @@ const hideObserver = new IntersectionObserver((entries) => {
 }, { threshold: [0, 0.7, 1] });
 
 hideObserver.observe(experienceSection);
+
+// Make popup images/videos open in a new tab when clicked
+document.querySelectorAll('.popup-content img, .popup-content video').forEach(el => {
+  el.style.cursor = 'pointer';
+  el.addEventListener('click', (e) => {
+    // For images
+    if (el.tagName.toLowerCase() === 'img') {
+      window.open(el.src, '_blank');
+    }
+    // For videos: open the first <source> src if available
+    if (el.tagName.toLowerCase() === 'video') {
+      const src = el.querySelector('source')?.src || el.src;
+      if (src) window.open(src, '_blank');
+    }
+    e.stopPropagation();
+  });
+});
