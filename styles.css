@@ -830,17 +830,22 @@ section#experience h2{
     text-align: left;
 }
 
-/* Vertical line - positioned to go through dots */
 .stripmap::before {
     content: "";
     position: absolute;
     left: calc(170px + 20px + 9px); /* logo width + margin + half dot width */
-    top: 13px; /* Start at center of first dot (half of 26px dot height) */
-    height: calc(100vh - 130px); /* Line height: viewport minus 130px from top */
+    top: 13px;
+    height: calc(100vh - 150px);
     width: var(--line-thickness);
-    background: var(--line-col);
+    /* Fade out at the bottom: */
+    background: linear-gradient(
+      to bottom,
+      var(--line-col) 0%,
+      var(--line-col) calc(100% - 120px),
+      rgba(185, 51, 173, 0) 100%
+    );
     z-index: 1;
-}             /* now on the left  */
+}
 
 /* ----- responsive tweaks ----- */
 @media (max-width:600px){

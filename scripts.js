@@ -82,19 +82,20 @@ closeButtons.forEach(button => {
 });
 
 
-const experienceSection = document.getElementById('experience');
+// Code to make experience section content disappear if scrolled away. DOn't like it, might get it back later
+// const experienceSection = document.getElementById('experience');
 
-const hideObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio < 0.7) {
-      experienceSection.style.visibility = 'hidden';
-    } else {
-      experienceSection.style.visibility = 'visible';
-    }
-  });
-}, { threshold: [0, 0.7, 1] });
+// const hideObserver = new IntersectionObserver((entries) => {
+//   entries.forEach(entry => {
+//     if (entry.intersectionRatio < 0.7) {
+//       experienceSection.style.visibility = 'hidden';
+//     } else {
+//       experienceSection.style.visibility = 'visible';
+//     }
+//   });
+// }, { threshold: [0, 0.7, 1] });
 
-hideObserver.observe(experienceSection);
+// hideObserver.observe(experienceSection);
 
 // Make popup images/videos open in a new tab when clicked
 document.querySelectorAll('.popup-content img, .popup-content video').forEach(el => {
