@@ -759,9 +759,82 @@ body {
     align-items: flex-start;
 }
 
-section#experience h2{
+.experience-heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  min-width: 250px;
+  min-height: 40px;
+  margin: 0 auto 2vh auto;
+  padding: 0.5em 2em;
+  font-size: 2em;
+  border-radius: 15px;
+  background: rgba(53, 4, 81, 0.654);
+  box-shadow: 0 0 32px 8px rgba(185, 51, 173, 0.25); /* faint purple glow */
+  backdrop-filter: blur(10.3px);
+  -webkit-backdrop-filter: blur(10.3px);
+  border: 1px solid rgba(189, 189, 189, 0.22);
+  color: white;
+  transition: background 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden;
   transform: translateY(-6vh);
 }
+
+.exp-header-text,
+.exp-header-resume {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.5em 2em;
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  background: transparent;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s, transform 1s cubic-bezier(.4,2,.6,1);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.exp-header-text {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+  font-size: 1.5em;
+}
+
+/* On hover, change background and glow color */
+.experience-heading:hover {
+  background: rgba(120, 0, 255, 0.35); /* brighter purple/blue glass */
+  box-shadow: 0 0 48px 12px rgba(120, 0, 255, 0.45); /* stronger blue glow */
+}
+
+.experience-heading:hover .exp-header-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.exp-header-resume {
+  transform: scale(1);
+  z-index: 3;
+  font-size: 1.3em;
+}
+
+.experience-heading:hover .exp-header-resume {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.18);
+}
+
 
 :root {
     --line-thickness: 7px;
