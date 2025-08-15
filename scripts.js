@@ -81,22 +81,6 @@ closeButtons.forEach(button => {
   });
 });
 
-
-// Code to make experience section content disappear if scrolled away. DOn't like it, might get it back later
-// const experienceSection = document.getElementById('experience');
-
-// const hideObserver = new IntersectionObserver((entries) => {
-//   entries.forEach(entry => {
-//     if (entry.intersectionRatio < 0.7) {
-//       experienceSection.style.visibility = 'hidden';
-//     } else {
-//       experienceSection.style.visibility = 'visible';
-//     }
-//   });
-// }, { threshold: [0, 0.7, 1] });
-
-// hideObserver.observe(experienceSection);
-
 // Make popup images/videos open in a new tab when clicked
 document.querySelectorAll('.popup-content img, .popup-content video').forEach(el => {
   el.style.cursor = 'pointer';
@@ -112,4 +96,21 @@ document.querySelectorAll('.popup-content img, .popup-content video').forEach(el
     }
     e.stopPropagation();
   });
+});
+
+// Add to scripts.js, shows visit count on homepage
+// Show total visits using CountAPI
+window.addEventListener('DOMContentLoaded', () => {
+  fetch('https://api.countapi.xyz/hit/azim-usmanov-personal-site/visits')
+    .then(res => res.json())
+    .then(data => {
+      const titleWrapper = document.getElementById('title-wrapper');
+      if (titleWrapper) {
+        const visitDiv = document.createElement('div');
+        visitDiv.style.fontSize = '1.2em';
+        visitDiv.style.marginTop = '1em';
+        visitDiv.textContent = `Total visits to this site: ${data.value}`;
+        titleWrapper.appendChild(visitDiv);
+      }
+    });
 });

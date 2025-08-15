@@ -639,6 +639,8 @@ body {
     grid-row-end: 3;
     margin-left: 12px;
     transform: translateY(-2%);
+    align-self: center;
+    justify-self: center;
   }
 
   #p2{
@@ -835,7 +837,7 @@ section#experience h2{
     position: absolute;
     left: calc(170px + 20px + 9px); /* logo width + margin + half dot width */
     top: 13px;
-    height: calc(100vh - 150px);
+    height: 100%;
     width: var(--line-thickness);
     /* Fade out at the bottom: */
     background: linear-gradient(
@@ -1052,3 +1054,16 @@ section#experience h2{
     animation: fadeOutSimple 0.5s ease-in-out !important;
     display: none;
   }
+
+  /*  MEDIA QUERY FOR BACKGROUND SMALLER SCREENS  */
+  @media (max-width: 700px) {
+  body {
+    background: linear-gradient(
+      to bottom,
+      #0a0a0a 60%,
+      #2d0036 100%
+    );
+    background-attachment: fixed;
+    color: white;
+  }
+}
