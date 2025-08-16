@@ -765,7 +765,7 @@ body {
   justify-content: center;
   align-items: center;
   width: fit-content;
-  min-width: 250px;
+  min-width: 160px;
   min-height: 40px;
   margin: 0 auto 2vh auto;
   padding: 0.5em 2em;
@@ -809,7 +809,7 @@ body {
   opacity: 1;
   pointer-events: auto;
   z-index: 2;
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
 /* On hover, change background and glow color */
@@ -826,7 +826,7 @@ body {
 .exp-header-resume {
   transform: scale(1);
   z-index: 3;
-  font-size: 1.3em;
+  font-size: 0.9em;
 }
 
 .experience-heading:hover .exp-header-resume {
