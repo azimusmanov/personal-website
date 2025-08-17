@@ -96,8 +96,8 @@ html {
   text-decoration: none;
   margin: 0 10px;
   border-bottom: 2px solid transparent;
-  padding: 3px 5px;
-  border-radius: 15px;
+  padding: 5px 10px;
+  border-radius: 25px;
   transition: 0.3s;
   position: relative;
   z-index: 1;
@@ -766,11 +766,11 @@ body {
   align-items: center;
   width: fit-content;
   min-width: 160px;
-  min-height: 40px;
+  min-height: 45px;
   margin: 0 auto 2vh auto;
   padding: 0.5em 2em;
   font-size: 2em;
-  border-radius: 15px;
+  border-radius: 25px;
   background: rgba(53, 4, 81, 0.654);
   box-shadow: 0 0 32px 8px rgba(185, 51, 173, 0.25); /* faint purple glow */
   backdrop-filter: blur(10.3px);
@@ -780,7 +780,7 @@ body {
   transition: background 0.3s, box-shadow 0.3s;
   cursor: pointer;
   overflow: hidden;
-  transform: translateY(-6vh);
+  transform: translateY(-5vh);
 }
 
 .exp-header-text,
@@ -809,13 +809,13 @@ body {
   opacity: 1;
   pointer-events: auto;
   z-index: 2;
-  font-size: 1.1em;
+  font-size: 1.5em;
 }
 
 /* On hover, change background and glow color */
 .experience-heading:hover {
-  background: rgba(120, 0, 255, 0.35); /* brighter purple/blue glass */
-  box-shadow: 0 0 48px 12px rgba(120, 0, 255, 0.45); /* stronger blue glow */
+  background: rgba(120, 0, 255, 0.20); /* brighter purple/blue glass */
+  box-shadow: 0 0 24px 6px rgba(120, 0, 255, 0.35); /* stronger blue glow */
 }
 
 .experience-heading:hover .exp-header-text {
@@ -826,7 +826,7 @@ body {
 .exp-header-resume {
   transform: scale(1);
   z-index: 3;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 
 .experience-heading:hover .exp-header-resume {
