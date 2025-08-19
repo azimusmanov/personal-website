@@ -76,7 +76,7 @@ html {
   font-size: 30px;
   text-decoration: none;
   font-weight: 600;
-  cursor: default;
+  cursor: pointer;
 }
 
 .logo:hover{
@@ -884,6 +884,7 @@ body {
     height: 68px;
     object-fit: contain;
     margin-left: calc(170px - 68px); /* Push square logos right to align dots */
+    cursor: pointer;
 }
 
 /* Dot positioning - right after logo */
