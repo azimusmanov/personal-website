@@ -857,7 +857,7 @@ body {
     align-items: center;
     margin-bottom: 40px;
     position: relative;
-    transform: translate(0, -1vh);
+    transform: translate(0, -2vh);
     z-index: 3;
 }
 
