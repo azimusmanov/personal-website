@@ -38,12 +38,13 @@ export default function Home() {
 
           <section>
             <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-3">Currently</p>
-            <p className="text-[#ededed]">BriteCo — Software Engineer Intern, backend development</p>
+            <p className="text-[#ededed]">Junior at Northwestern University, studying Computer Engineering with a minor in Machine Learning.</p>
           </section>
 
           <section>
             <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-3">Previously</p>
             <div className="flex flex-col gap-1 text-[#a3a3a3]">
+              <p>BriteCo (software engineering)</p>
               <p>ComEd (software engineering)</p>
               <p>Sensify (software engineering)</p>
               <p>Outlier (LLM QA)</p>
@@ -63,44 +64,24 @@ export default function Home() {
       </div>
 
       {/* Right — links */}
-      <div className="flex flex-col gap-12 pt-2">
+      <div className="flex flex-col gap-10 pt-2">
         <div>
-          <p className="font-mono text-xs tracking-widest text-[#525252] uppercase mb-5">Direct</p>
-          <a
-            href="mailto:azimusmanov2027@u.northwestern.edu"
-            className="group flex items-center gap-3 font-mono text-lg text-[#ededed] hover:text-white transition-colors break-all"
-          >
-            azimusmanov2027@u.northwestern.edu
-            <span className="inline-block w-2 h-2 rounded-full bg-green-500 shrink-0 group-hover:bg-green-400 transition-colors" />
-          </a>
-        </div>
-
-        <div>
-          <p className="font-mono text-xs tracking-widest text-[#525252] uppercase mb-5">
-            GitHub / LinkedIn
-          </p>
-          <div className="flex flex-col gap-4">
-            <a
-              href="https://github.com/azimusmanov"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-lg text-[#ededed] hover:text-white transition-colors"
-            >
-              github.com/azimusmanov
+          <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">Links</p>
+          <div className="flex flex-col gap-3 font-mono text-sm text-[#a3a3a3]">
+            <a href="mailto:azimusmanov2027@u.northwestern.edu" className="hover:text-white transition-colors flex items-center gap-2">
+              Email <span className="text-[#7c5cbf]">·</span>
             </a>
-            <a
-              href="https://www.linkedin.com/in/azimusmanov77/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-lg text-[#ededed] hover:text-white transition-colors"
-            >
-              linkedin.com/in/azimusmanov77
+            <a href="https://github.com/azimusmanov" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              GitHub <span className="text-[#7c5cbf]">·</span>
+            </a>
+            <a href="https://www.linkedin.com/in/azimusmanov77/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              LinkedIn <span className="text-[#7c5cbf]">·</span>
             </a>
           </div>
         </div>
 
         <div>
-          <p className="font-mono text-xs tracking-widest text-[#525252] uppercase mb-5">Docs</p>
+          <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">Docs</p>
           <a
             href="/Azim_Latex_Resume_V1.pdf"
             target="_blank"

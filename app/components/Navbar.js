@@ -10,7 +10,7 @@ export default function Navbar() {
         <Link href="/work" className="hover:text-[#ededed] transition-colors">Work</Link>
         <Link href="/projects" className="hover:text-[#ededed] transition-colors">Projects</Link>
         <a href="/Azim_Latex_Resume_V1.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-[#ededed] transition-colors">CV</a>
-        <a href="mailto:azimusmanov2027@u.northwestern.edu" className="hover:text-[#ededed] transition-colors">Contact</a>
+        <Link href="/contact" className="hover:text-[#ededed] transition-colors">Contact</Link>
       </div>
     </nav>
   );

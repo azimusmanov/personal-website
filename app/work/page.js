@@ -54,7 +54,7 @@ const jobs = [
     company: "Kumon",
     role: "Teaching Assistant",
     period: "Sep 2022 – May 2023",
-    location: "Lorem City, IL",
+    location: "Ossining, NY",
     logo: "/kumonlogo.png",
     logoAlt: "Kumon logo",
     tags: ["Teaching", "Mathematics"],
