@@ -7,11 +7,10 @@ const jobs = [
     role: "Software Engineer Intern",
     period: "Jan 2026 – Mar 2026",
     location: "Evanston, IL · Hybrid",
-    logo: null,
-    logoAlt: "BriteCo",
-    tags: ["Python", "Git"],
-    description:
-      "Developed backend systems and APIs, strengthening backend development skills. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    logo: "/briteco-icon.png",
+    logoAlt: "BriteCo logo",
+    tags: ["Python", "Docker", "GitHub Actions", "CI/CD"],
+    description: "Migrated 10+ internal services from legacy APIs to a scalable backend architecture, analyzing dependencies across 100+ repositories to support migration planning. Modified repositories to enable GitHub Actions with runtime secret injection into Docker images for CI workflows.",
   },
   {
     id: 2,
@@ -21,33 +20,30 @@ const jobs = [
     location: "Joliet, IL · Hybrid",
     logo: "/comedlogo.png",
     logoAlt: "ComEd logo",
-    tags: ["VBA", "Microsoft Excel"],
-    description:
-      "Developed VBA scripts to automate data migration across internal systems, reducing manual effort and improving data accuracy.",
+    tags: ["VBA", "Microsoft Excel", "SCADA"],
+    description: "Automated an Excel–Access data transfer pipeline via VBA, cutting processing time by 45%, and migrated 500+ pages of switch number records into a standardized sheet, reducing lookup time by 53%. Updated customer counts in SCADA for 20+ substations using OMS data.",
   },
   {
     id: 3,
-    company: "Sensify",
+    company: "Sensify Recycling",
     role: "Software Engineer Intern",
-    period: "Nov 2024 – Aug 2025",
+    period: "Nov 2024 – Jun 2025",
     location: "Evanston, IL · On-site",
     logo: "/sensifylogo.png",
     logoAlt: "Sensify logo",
-    tags: ["Python", "Embedded Systems"],
-    description:
-      "Northwestern Startup (The Garage). Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    tags: ["Python", "Raspberry Pi", "Amazon S3", "Computer Vision"],
+    description: "Built a Raspberry Pi data capture pipeline in Python to capture images and upload them to Amazon S3, and engineered an object detection pipeline with bounding box visualization. Developed a benchmarking script to compare classification accuracy and response time across LLMs via API calls.",
   },
   {
     id: 4,
-    company: "Outlier",
+    company: "Outlier AI",
     role: "LLM QA Analyst",
     period: "Jun 2024 – Sep 2024",
     location: "Remote",
     logo: "/outleirlogo.svg",
     logoAlt: "Outlier logo",
-    tags: ["Python", "RLHF"],
-    description:
-      "Reinforcement learning from human feedback (RLHF). Evaluated and ranked model outputs to improve LLM quality and alignment.",
+    tags: ["Python", "RLHF", "Prompt Engineering"],
+    description: "Completed 70+ RLHF evaluations on AI-generated responses across single and multi-turn conversations, improving API tool choice accuracy. Wrote and refined prompts to train LLMs across code, math, and conversational tasks.",
   },
   {
     id: 5,
@@ -58,8 +54,7 @@ const jobs = [
     logo: "/kumonlogo.png",
     logoAlt: "Kumon logo",
     tags: ["Teaching", "Mathematics"],
-    description:
-      "Assisted students with Kumon math and reading worksheets, grading completed work and tracking individual progress. Provided one-on-one guidance to help students work through problems independently, reinforcing foundational skills and building study habits.",
+    description: "Assisted students with math and reading worksheets, grading work and tracking individual progress. Provided one-on-one guidance to reinforce foundational skills and independent problem-solving habits.",
   },
 ];
 
@@ -104,7 +99,7 @@ export default function Work() {
                 <h2 className="text-xl font-semibold text-white">{job.company}</h2>
                 <p className="text-[#a3a3a3] font-mono text-sm">{job.role}</p>
               </div>
-              <p className="text-[#a3a3a3] leading-relaxed text-sm">{job.description}</p>
+              <p className="text-[#a3a3a3] text-sm leading-relaxed">{job.description}</p>
               <div className="flex gap-2 flex-wrap">
                 {job.tags.map((tag) => (
                   <span key={tag} className="font-mono text-xs text-[#7c5cbf] border border-[#1e1830] px-2 py-1">
