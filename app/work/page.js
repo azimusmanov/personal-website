@@ -60,7 +60,7 @@ const jobs = [
 
 export default function Work() {
   return (
-    <div className="max-w-4xl mx-auto px-8 py-24">
+    <div className="max-w-5xl mx-auto px-8 py-24">
       <div className="mb-16">
         <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">02</p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">Work</h1>

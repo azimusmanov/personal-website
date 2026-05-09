@@ -57,14 +57,14 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-24">
-      <div className="mb-16 px-8">
+    <div className="py-24">
+      <div className="max-w-5xl mx-auto px-8 mb-16">
         <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">03</p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">Projects</h1>
         <p className="text-[#a3a3a3] text-lg">Things I&apos;ve built.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#262626]">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1e1830]">
         {projects.map((project) => {
           const Wrapper = project.link ? "a" : "div";
           const wrapperProps = project.link
@@ -75,7 +75,7 @@ export default function Projects() {
             <Wrapper
               key={project.id}
               {...wrapperProps}
-              className="group bg-[#0a0a0a] p-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#111111] hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)] cursor-pointer"
+              className="group bg-[#09060e] p-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#110d1a] hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)] cursor-pointer"
             >
               <div className="flex flex-col gap-1 flex-1">
                 <div className="flex items-start justify-between gap-2 mb-2">
@@ -110,4 +110,5 @@ export default function Projects() {
       </div>
     </div>
   );
+
 }
