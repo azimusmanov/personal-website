@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# hes too cracked
+assets/StevenEwald-CV-3er56l8t.pdf

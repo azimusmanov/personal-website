@@ -2,7 +2,7 @@ const projects = [
   {
     id: 1,
     title: "IMN Law Firm Website",
-    subtitle: "Professional Marketing Site · Next.js · Deployed on Vercel",
+    subtitle: "Professional Marketing Site for IMN Law",
     description:
       "Designed and developed a professional marketing website for a law firm, focusing on clean presentation and user experience. Built with Next.js and deployed on Vercel.",
     tags: ["Next.js", "React", "Vercel"],
@@ -20,10 +20,10 @@ const projects = [
   {
     id: 3,
     title: "Gesture-Controlled Robotic Arm",
-    subtitle: null,
+    subtitle: "Computer Engineering Capstone Project",
     description:
       "Designed firmware for the HiWonder LeArm (6-DOF robotic arm) controlled via hand gestures using an MPU-6050 IMU accelerometer and flex sensor for real-time finger and wrist tracking.",
-    tags: ["ESP32", "C++", "Arduino"],
+    tags: ["ESP32", "C++", "Arduino", "Robotics"],
     link: "https://www.youtube.com/watch?v=E3Fcq4fxuDs",
   },
   {
