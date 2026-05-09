@@ -58,7 +58,7 @@ const projects = [
 export default function Projects() {
   return (
     <div className="max-w-5xl mx-auto px-8 py-24">
-      <div className="mb-16">
+      <div className="mb-16 px-8">
         <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">03</p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">Projects</h1>
         <p className="text-[#a3a3a3] text-lg">Things I&apos;ve built.</p>
