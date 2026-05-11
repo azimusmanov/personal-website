@@ -74,18 +74,19 @@ export default function Projects() {
       </div>
 
       <div className="max-w-5xl mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1e1830]">
-          {projects.map((project) => {
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          {projects.map((project, index) => {
             const Wrapper = project.link ? "a" : "div";
             const wrapperProps = project.link
               ? { href: project.link, target: "_blank", rel: "noopener noreferrer" }
               : {};
+            const isRightCol = index % 2 === 1;
 
             return (
               <Wrapper
                 key={project.id}
                 {...wrapperProps}
-                className="group bg-[#09060e] p-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#110d1a] hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)] cursor-pointer"
+                className={`group bg-[#09060e] pt-8 pb-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#110d1a] cursor-pointer border-b border-[#1e1830] ${isRightCol ? "pl-8 border-l border-[#1e1830]" : "pr-8"}`}
               >
                 <div className="flex flex-col gap-1 flex-1">
                   <div className="flex items-start justify-between gap-2 mb-2">
@@ -118,7 +119,7 @@ export default function Projects() {
             );
           })}
           {projects.length % 2 !== 0 && (
-            <div className="bg-[#09060e]" />
+            <div className="bg-[#09060e] border-l border-b border-[#1e1830]" />
           )}
         </div>
       </div>
