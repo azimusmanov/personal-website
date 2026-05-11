@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NebulaBackground from "@/app/components/NebulaBackground";
 
 const jobs = [
   {
@@ -60,7 +61,9 @@ const jobs = [
 
 export default function Work() {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-24">
+    <div style={{ position: 'relative' }}>
+      <NebulaBackground />
+      <div className="max-w-5xl mx-auto px-8 py-24" style={{ position: 'relative', zIndex: 1 }}>
       <div className="mb-16">
         <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">02</p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">Work</h1>
@@ -82,7 +85,7 @@ export default function Work() {
                     className="object-contain w-full h-full"
                   />
                 ) : (
-                  <span className="font-mono text-[10px] font-bold text-[#09060e] text-center leading-tight">
+                  <span className="font-mono text-[10px] font-bold text-black text-center leading-tight">
                     {job.company}
                   </span>
                 )}
@@ -110,6 +113,7 @@ export default function Work() {
             </div>
           </article>
         ))}
+      </div>
       </div>
     </div>
   );

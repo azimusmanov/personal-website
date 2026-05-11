@@ -23,10 +23,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#0a0a0a] text-[#ededed]">
+      <body className="min-h-full flex flex-col bg-black text-[#ededed]">
         <Navbar />
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-[#1e1830] px-8 py-6 text-xs text-[#525252] font-mono">
+        <main className="flex-1 pt-[73px] pb-14">{children}</main>
+        <footer className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#1e1830] px-8 py-4 text-xs text-[#525252] font-mono" style={{ backgroundColor: '#000000' }}>
           © 2026 AU
         </footer>
       </body>

@@ -1,5 +1,9 @@
+import BackgroundEffect from "@/app/components/BackgroundEffect";
+
 export default function Contact() {
   return (
+    <>
+    <BackgroundEffect />
     <div className="max-w-2xl mx-auto px-8 py-24 flex flex-col gap-16">
       <div>
         <p className="font-mono text-xs tracking-widest text-[#525252] uppercase mb-6">Direct</p>
@@ -36,5 +40,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </>
   );
 }
