@@ -68,9 +68,9 @@ const projects = [
 
 export default function Projects() {
   return (
-    <>
-    <GradientBackground />
-    <div className="py-24">
+    <div style={{ position: 'relative' }}>
+      <GradientBackground />
+      <div className="py-24" style={{ position: 'relative', zIndex: 1 }}>
       <div className="max-w-5xl mx-auto px-8 mb-16">
         <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">03</p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">Projects</h1>
@@ -129,7 +129,7 @@ export default function Projects() {
           )}
         </div>
       </div>
+      </div>
     </div>
-    </>
   );
 }

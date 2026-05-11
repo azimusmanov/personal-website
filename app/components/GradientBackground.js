@@ -7,26 +7,28 @@ export default function GradientBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    const parent = canvas.parentElement;
     const ctx = canvas.getContext('2d');
     let animationId;
     let t = 0;
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const setSize = () => {
+      canvas.width = parent.offsetWidth || window.innerWidth;
+      canvas.height = parent.offsetHeight || window.innerHeight;
     };
-    resize();
-    window.addEventListener('resize', resize);
+    setSize();
 
-    // Each node follows a smooth sine-wave path — deterministic, fluid, geometric
+    const ro = new ResizeObserver(setSize);
+    ro.observe(parent);
+
     const nodes = [
-      { bx: 0.15, by: 0.25, ax: 0.18, ay: 0.14, fx: 0.00028, fy: 0.00038, px: 0.0,  py: 1.2, r: 0.52, color: [100, 40, 210], opacity: 0.11 },
-      { bx: 0.82, by: 0.18, ax: 0.14, ay: 0.18, fx: 0.00038, fy: 0.00028, px: 2.1,  py: 0.4, r: 0.46, color: [25, 110, 200], opacity: 0.09 },
-      { bx: 0.50, by: 0.72, ax: 0.22, ay: 0.12, fx: 0.00032, fy: 0.00042, px: 1.0,  py: 2.6, r: 0.50, color: [160, 35, 175], opacity: 0.10 },
-      { bx: 0.08, by: 0.60, ax: 0.10, ay: 0.22, fx: 0.00042, fy: 0.00032, px: 3.5,  py: 0.9, r: 0.42, color: [50, 150, 175], opacity: 0.08 },
-      { bx: 0.88, by: 0.78, ax: 0.13, ay: 0.16, fx: 0.00030, fy: 0.00048, px: 0.5,  py: 1.8, r: 0.40, color: [115, 55, 225], opacity: 0.09 },
-      { bx: 0.42, by: 0.22, ax: 0.20, ay: 0.13, fx: 0.00048, fy: 0.00030, px: 2.8,  py: 3.1, r: 0.38, color: [70, 25, 165], opacity: 0.08 },
-      { bx: 0.65, by: 0.50, ax: 0.16, ay: 0.20, fx: 0.00035, fy: 0.00025, px: 1.6,  py: 0.7, r: 0.44, color: [30, 80, 210],  opacity: 0.07 },
+      { bx: 0.15, by: 0.10, ax: 0.18, ay: 0.10, fx: 0.00028, fy: 0.00038, px: 0.0,  py: 1.2, r: 0.52, color: [100, 40, 210], opacity: 0.11 },
+      { bx: 0.82, by: 0.15, ax: 0.14, ay: 0.12, fx: 0.00038, fy: 0.00028, px: 2.1,  py: 0.4, r: 0.46, color: [25, 110, 200], opacity: 0.09 },
+      { bx: 0.50, by: 0.40, ax: 0.22, ay: 0.10, fx: 0.00032, fy: 0.00042, px: 1.0,  py: 2.6, r: 0.50, color: [160, 35, 175], opacity: 0.10 },
+      { bx: 0.08, by: 0.55, ax: 0.10, ay: 0.15, fx: 0.00042, fy: 0.00032, px: 3.5,  py: 0.9, r: 0.42, color: [50, 150, 175], opacity: 0.08 },
+      { bx: 0.88, by: 0.65, ax: 0.13, ay: 0.12, fx: 0.00030, fy: 0.00048, px: 0.5,  py: 1.8, r: 0.40, color: [115, 55, 225], opacity: 0.09 },
+      { bx: 0.42, by: 0.80, ax: 0.20, ay: 0.10, fx: 0.00048, fy: 0.00030, px: 2.8,  py: 3.1, r: 0.38, color: [70, 25, 165], opacity: 0.08 },
+      { bx: 0.65, by: 0.90, ax: 0.16, ay: 0.08, fx: 0.00035, fy: 0.00025, px: 1.6,  py: 0.7, r: 0.44, color: [30, 80, 210],  opacity: 0.07 },
     ];
 
     const draw = () => {
@@ -59,14 +61,14 @@ export default function GradientBackground() {
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', resize);
+      ro.disconnect();
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, pointerEvents: 'none' }}
+      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}
     />
   );
 }

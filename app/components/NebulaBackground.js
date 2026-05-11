@@ -7,26 +7,31 @@ export default function NebulaBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    const parent = canvas.parentElement;
     const ctx = canvas.getContext('2d');
     let animationId;
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const setSize = () => {
+      canvas.width = parent.offsetWidth || window.innerWidth;
+      canvas.height = parent.offsetHeight || window.innerHeight;
     };
-    resize();
-    window.addEventListener('resize', resize);
+    setSize();
+
+    const ro = new ResizeObserver(setSize);
+    ro.observe(parent);
 
     const clouds = [
-      { x: 0.15, y: 0.25, r: 0.42, color: [110, 50, 190], vx: 0.00007, vy: 0.00004, opacity: 0.09 },
-      { x: 0.72, y: 0.18, r: 0.35, color: [40, 140, 190], vx: -0.00005, vy: 0.00006, opacity: 0.08 },
-      { x: 0.48, y: 0.65, r: 0.45, color: [160, 50, 150], vx: 0.00004, vy: -0.00005, opacity: 0.07 },
-      { x: 0.88, y: 0.55, r: 0.3, color: [160, 100, 30], vx: -0.00006, vy: -0.00004, opacity: 0.06 },
-      { x: 0.08, y: 0.75, r: 0.35, color: [70, 30, 150], vx: 0.00005, vy: -0.00007, opacity: 0.08 },
-      { x: 0.55, y: 0.35, r: 0.28, color: [90, 60, 200], vx: -0.00004, vy: 0.00005, opacity: 0.07 },
+      { x: 0.15, y: 0.15, r: 0.42, color: [110, 50, 190], vx: 0.00007, vy: 0.00004, opacity: 0.09 },
+      { x: 0.72, y: 0.10, r: 0.35, color: [40, 140, 190], vx: -0.00005, vy: 0.00006, opacity: 0.08 },
+      { x: 0.48, y: 0.45, r: 0.45, color: [160, 50, 150], vx: 0.00004, vy: -0.00005, opacity: 0.07 },
+      { x: 0.88, y: 0.35, r: 0.30, color: [160, 100, 30], vx: -0.00006, vy: -0.00004, opacity: 0.06 },
+      { x: 0.08, y: 0.60, r: 0.35, color: [70, 30, 150], vx: 0.00005, vy: -0.00007, opacity: 0.08 },
+      { x: 0.55, y: 0.75, r: 0.28, color: [90, 60, 200], vx: -0.00004, vy: 0.00005, opacity: 0.07 },
+      { x: 0.30, y: 0.85, r: 0.38, color: [50, 120, 180], vx: 0.00006, vy: 0.00003, opacity: 0.07 },
+      { x: 0.80, y: 0.70, r: 0.32, color: [130, 40, 160], vx: -0.00005, vy: 0.00006, opacity: 0.06 },
     ];
 
-    const stars = Array.from({ length: 70 }, () => ({
+    const stars = Array.from({ length: 100 }, () => ({
       x: Math.random(),
       y: Math.random(),
       r: 0.4 + Math.random() * 1.2,
@@ -51,9 +56,9 @@ export default function NebulaBackground() {
         const [r, g, b] = c.color;
 
         const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-        grad.addColorStop(0,   `rgba(${r},${g},${b},${c.opacity})`);
-        grad.addColorStop(0.45,`rgba(${r},${g},${b},${c.opacity * 0.4})`);
-        grad.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+        grad.addColorStop(0,    `rgba(${r},${g},${b},${c.opacity})`);
+        grad.addColorStop(0.45, `rgba(${r},${g},${b},${c.opacity * 0.4})`);
+        grad.addColorStop(1,    `rgba(${r},${g},${b},0)`);
 
         ctx.beginPath();
         ctx.fillStyle = grad;
@@ -77,14 +82,14 @@ export default function NebulaBackground() {
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', resize);
+      ro.disconnect();
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, pointerEvents: 'none' }}
+      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}
     />
   );
 }
