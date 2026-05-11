@@ -10,6 +10,15 @@ const projects = [
   },
   {
     id: 2,
+    title: "SteadyStep",
+    subtitle: "Gait Analysis Healthtech Wearable · IEEE Best Impact Award",
+    description:
+      "Built with a team of 5 for IEEE, SteadyStep is a wearable device that analyzes how you walk and detects irregularities in real time, winning the Best Impact Award. It streams motion data from a custom-designed lightweight shoe attachment to a web dashboard that gives instant feedback and disease risks on your gait.",
+    tags: ["C", "ESP32", "Python", "FastAPI", "WebSockets", "React"],
+    link: "https://steadystep.azimusmanov.com",
+  },
+  {
+    id: 3,
     title: "WildCatch",
     subtitle: "Pokémon GO-Inspired Study Game",
     description:
@@ -18,7 +27,7 @@ const projects = [
     link: "https://github.com/rohvvn/wildhacks2026",
   },
   {
-    id: 3,
+    id: 4,
     title: "Gesture-Controlled Robotic Arm",
     subtitle: "Computer Engineering Capstone Project",
     description:
@@ -27,7 +36,7 @@ const projects = [
     link: "https://www.youtube.com/watch?v=E3Fcq4fxuDs",
   },
   {
-    id: 4,
+    id: 5,
     title: "YogaPal",
     subtitle: "Real-Time Yoga Pose Classification System",
     description:
@@ -36,16 +45,16 @@ const projects = [
     link: "https://github.com/azimusmanov/yoga_pal",
   },
   {
-    id: 5,
+    id: 6,
     title: "Iron Man Gauntlet",
     subtitle: "Comp E. 346 Final Project",
     description:
-      "Wearable Iron Man-inspired gauntlet designed to bring fictional tech to life. Uses sensors to detect arm and finger movements — raising the hand lights up a repulsor LED and plays a sound, raising the middle finger triggers Back in Black by AC/DC, and snapping causes six infinity stone LEDs to light up with a matching sound effect. Built over six weeks with a focus on embedded programming, sensor interfacing, and physical prototyping.",
-    tags: ["Microbit V2", "Breadboarding & Soldering", "Sensors & Peripherals"],
+      "Wearable Iron Man-inspired gauntlet designed to bring fictional tech to life. Uses sensors to detect arm and finger movements — raising the hand lights up a repulsor LED and plays a sound, raising the middle finger triggers Back in Black by AC/DC, and snapping causes six infinity stone LEDs to light up with a matching sound effect.",
+    tags: ["Microbit V2", "C", "Circuit Design"],
     link: "https://youtube.com/shorts/XP0y9XYDE2Q",
   },
   {
-    id: 6,
+    id: 7,
     title: "MizaAI",
     subtitle: "Wildhacks 2025",
     description:
@@ -64,51 +73,55 @@ export default function Projects() {
         <p className="text-[#a3a3a3] text-lg">Things I&apos;ve built.</p>
       </div>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1e1830]">
-        {projects.map((project) => {
-          const Wrapper = project.link ? "a" : "div";
-          const wrapperProps = project.link
-            ? { href: project.link, target: "_blank", rel: "noopener noreferrer" }
-            : {};
+      <div className="max-w-5xl mx-auto px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1e1830]">
+          {projects.map((project) => {
+            const Wrapper = project.link ? "a" : "div";
+            const wrapperProps = project.link
+              ? { href: project.link, target: "_blank", rel: "noopener noreferrer" }
+              : {};
 
-          return (
-            <Wrapper
-              key={project.id}
-              {...wrapperProps}
-              className="group bg-[#09060e] p-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#110d1a] hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)] cursor-pointer"
-            >
-              <div className="flex flex-col gap-1 flex-1">
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <div className="flex flex-col gap-0.5">
-                    <h2 className="font-semibold text-white text-base leading-snug group-hover:text-white/90 transition-colors">
-                      {project.title}
-                    </h2>
-                    {project.subtitle && (
-                      <p className="font-mono text-xs text-[#7c5cbf]">{project.subtitle}</p>
+            return (
+              <Wrapper
+                key={project.id}
+                {...wrapperProps}
+                className="group bg-[#09060e] p-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#110d1a] hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)] cursor-pointer"
+              >
+                <div className="flex flex-col gap-1 flex-1">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="flex flex-col gap-0.5">
+                      <h2 className="font-semibold text-white text-base leading-snug group-hover:text-white/90 transition-colors">
+                        {project.title}
+                      </h2>
+                      {project.subtitle && (
+                        <p className="font-mono text-xs text-[#7c5cbf]">{project.subtitle}</p>
+                      )}
+                    </div>
+                    {project.link && (
+                      <span className="font-mono text-xs text-[#525252] group-hover:text-[#7c5cbf] transition-colors shrink-0 mt-0.5">
+                        ↗
+                      </span>
                     )}
                   </div>
-                  {project.link && (
-                    <span className="font-mono text-xs text-[#525252] group-hover:text-[#7c5cbf] transition-colors shrink-0 mt-0.5">
-                      ↗
-                    </span>
-                  )}
+                  <p className="text-[#a3a3a3] text-sm leading-relaxed flex-1">
+                    {project.description}
+                  </p>
                 </div>
-                <p className="text-[#a3a3a3] text-sm leading-relaxed flex-1">
-                  {project.description}
-                </p>
-              </div>
-              <div className="flex gap-2 flex-wrap pt-3 border-t border-[#262626]">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="font-mono text-xs text-[#7c5cbf]">
-                    {tag} ·
-                  </span>
-                ))}
-              </div>
-            </Wrapper>
-          );
-        })}
+                <div className="flex gap-2 flex-wrap pt-3 border-t border-[#262626]">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="font-mono text-xs text-[#7c5cbf]">
+                      {tag} ·
+                    </span>
+                  ))}
+                </div>
+              </Wrapper>
+            );
+          })}
+          {projects.length % 2 !== 0 && (
+            <div className="bg-[#09060e]" />
+          )}
+        </div>
       </div>
     </div>
   );
-
 }
