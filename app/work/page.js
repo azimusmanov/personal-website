@@ -82,7 +82,7 @@ export default function Work() {
                     className="object-contain w-full h-full"
                   />
                 ) : (
-                  <span className="font-mono text-[10px] font-bold text-[#09060e] text-center leading-tight">
+                  <span className="font-mono text-[10px] font-bold text-black text-center leading-tight">
                     {job.company}
                   </span>
                 )}

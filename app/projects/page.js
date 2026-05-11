@@ -88,7 +88,7 @@ export default function Projects() {
               <Wrapper
                 key={project.id}
                 {...wrapperProps}
-                className={`group bg-[#09060e] pt-8 pb-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#110d1a] cursor-pointer ${!isLastRow ? "border-b border-[#1e1830]" : ""} ${isRightCol ? "pl-8 border-l border-[#1e1830]" : "pr-8"}`}
+                className={`group bg-black pt-8 pb-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#0d0d0d] cursor-pointer ${!isLastRow ? "border-b border-[#1e1830]" : ""} ${isRightCol ? "pl-8 border-l border-[#1e1830]" : "pr-8"}`}
               >
                 <div className="flex flex-col gap-1 flex-1">
                   <div className="flex items-start justify-between gap-2 mb-2">
@@ -121,7 +121,7 @@ export default function Projects() {
             );
           })}
           {projects.length % 2 !== 0 && (
-            <div className="bg-[#09060e] border-l border-[#1e1830]" />
+            <div className="bg-black border-l border-[#1e1830]" />
           )}
         </div>
       </div>
