@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NebulaBackground from "@/app/components/NebulaBackground";
 
 const jobs = [
   {
@@ -60,6 +61,8 @@ const jobs = [
 
 export default function Work() {
   return (
+    <>
+    <NebulaBackground />
     <div className="max-w-5xl mx-auto px-8 py-24">
       <div className="mb-16">
         <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">02</p>
@@ -112,5 +115,6 @@ export default function Work() {
         ))}
       </div>
     </div>
+    </>
   );
 }

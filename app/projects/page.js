@@ -1,3 +1,5 @@
+import GradientBackground from "@/app/components/GradientBackground";
+
 const projects = [
   {
     id: 1,
@@ -66,6 +68,8 @@ const projects = [
 
 export default function Projects() {
   return (
+    <>
+    <GradientBackground />
     <div className="py-24">
       <div className="max-w-5xl mx-auto px-8 mb-16">
         <p className="font-mono text-xs tracking-widest text-[#7c5cbf] uppercase mb-4">03</p>
@@ -88,7 +92,7 @@ export default function Projects() {
               <Wrapper
                 key={project.id}
                 {...wrapperProps}
-                className={`group bg-black pt-8 pb-8 flex flex-col gap-4 transition-all duration-200 hover:bg-[#0d0d0d] cursor-pointer ${!isLastRow ? "border-b border-[#1e1830]" : ""} ${isRightCol ? "pl-8 border-l border-[#1e1830]" : "pr-8"}`}
+                className={`group bg-transparent pt-8 pb-8 flex flex-col gap-4 transition-all duration-200 cursor-pointer ${!isLastRow ? "border-b border-[#1e1830]" : ""} ${isRightCol ? "pl-8 border-l border-[#1e1830]" : "pr-8"}`}
               >
                 <div className="flex flex-col gap-1 flex-1">
                   <div className="flex items-start justify-between gap-2 mb-2">
@@ -121,10 +125,11 @@ export default function Projects() {
             );
           })}
           {projects.length % 2 !== 0 && (
-            <div className="bg-black border-l border-[#1e1830]" />
+            <div className="bg-transparent border-l border-[#1e1830]" />
           )}
         </div>
       </div>
     </div>
+    </>
   );
 }

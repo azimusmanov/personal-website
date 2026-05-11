@@ -1,7 +1,10 @@
 import Link from "next/link";
+import BackgroundEffect from "@/app/components/BackgroundEffect";
 
 export default function Home() {
   return (
+    <>
+    <BackgroundEffect />
     <div className="max-w-5xl mx-auto px-8 py-24 grid grid-cols-1 md:grid-cols-[1fr_280px] gap-24">
       {/* Left — hero */}
       <div className="flex flex-col gap-16">
@@ -86,12 +89,13 @@ export default function Home() {
             href="/Azim_Latex_Resume_V1.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase px-4 py-3 border border-[#1e1830] text-[#a3a3a3] hover:border-[#7c5cbf] hover:text-[#ededed] transition-all"
+            className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase px-4 py-3 border border-[#1e1830] text-[#a3a3a3] hover:border-[#7c5cbf] hover:text-[#ededed] transition-all" style={{ backgroundColor: '#000000' }}
           >
             Download CV <span className="text-[#7c5cbf]">.pdf</span>
           </a>
         </div>
       </div>
     </div>
+    </>
   );
 }

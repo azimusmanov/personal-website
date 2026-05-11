@@ -22,7 +22,7 @@ export default function BackgroundEffect() {
           y: Math.random() * -canvas.height * 2,
           speed: 0.5 + Math.random() * 0.8,
           length,
-          opacity: 0.1 + Math.random() * 0.9,
+          opacity: 0.1 + Math.random() * 0.4,
           chars: Array.from({ length }, () => (Math.random() > 0.5 ? '1' : '0')),
         };
       });
