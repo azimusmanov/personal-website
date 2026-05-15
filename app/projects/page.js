@@ -24,7 +24,7 @@ const projects = [
     title: "WildCatch",
     subtitle: "Pokémon GO-Inspired Study Game",
     description:
-      "Worked in a team of four to develop a Pokémon GO-inspired study web app, utilizing the user's GPS location to spawn and capture quiz characters across Northwestern's campus, reinforcing learning via the method of loci. Built and deployed a Node.js/Express REST API on Railway, integrating Supabase across 4 relational tables.",
+      "Inspired by the 'childhood games' them of WildHacks 2026, a team of four worked to develop a Pokémon GO-inspired study web app, utilizing the user's GPS location to spawn and capture quiz characters across Northwestern's campus, reinforcing learning via the method of loci. Built and deployed a Node.js/Express REST API on Railway, integrating Supabase across 4 relational tables.",
     tags: ["JavaScript", "Supabase", "Railway", "Node.js"],
     link: "https://github.com/rohvvn/wildhacks2026",
   },
@@ -60,7 +60,7 @@ const projects = [
     title: "MizaAI",
     subtitle: "Wildhacks 2025",
     description:
-      "Inspired by Wildhacks 2025's theme \"Choose Your Own Adventure,\" built Miza to help students take control of their time and break free from distractions. Users describe study goals via voice input; Miza uses Google Gemini to generate a personalized dashboard with a timer and checklist. Tracks browser activity via a Chrome extension and uses eye tracking to assess attention levels, labeling visited sites as productive or unproductive.",
+      "Inspired by Wildhacks 2025's theme \"Choose Your Own Adventure,\" Miza was built to help students take control of their time and break free from distractions. Users describe study goals via voice input; Miza uses Google Gemini to generate a personalized dashboard with a timer and checklist. Tracks browser activity via a Chrome extension and uses eye tracking to assess attention levels, labeling visited sites as productive or unproductive.",
     tags: ["Python", "Gemini API", "OpenCV"],
     link: "https://devpost.com/software/lockedin-with-gemini",
   },
