@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="flex items-center gap-8 font-mono text-xs tracking-widest text-[#a3a3a3] uppercase">
         <Link href="/work" className="hover:text-[#ededed] transition-colors">Work</Link>
         <Link href="/projects" className="hover:text-[#ededed] transition-colors">Projects</Link>
-        <a href="/Azim_Latex_Resume_V1.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-[#ededed] transition-colors">CV</a>
+        <a href="/UsmanovAzim.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-[#ededed] transition-colors">CV</a>
       </div>
     </nav>
   );
